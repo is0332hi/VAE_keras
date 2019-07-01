@@ -1,4 +1,4 @@
-# VAE_keras
+# VAE_keras for mnist
 using tensorflow embedding visualizer for latent space
 
 plz after training
