@@ -168,13 +168,3 @@ embedding.sprite.single_image_dim.extend([28, 28]) # image size = 28x28
 projector.visualize_embeddings(summary_writer, config)
 saver = tf.train.Saver([embedding_var])
 saver.save(sess, os.path.join(LOG_DIR, 'model2.ckpt'), 1)
-
-# make sprite images
-"""
-from PIL import Image
-img_array = x_test.reshape(100, 100, 28, 28)
-img_array_flat = np.concatenate([np.concatenate([x for x in row], axis=1) for row in img_array])
-img = Image.fromarray(np.uint8(255 * (1. - img_array_flat)))
-img.save(os.path.join(log_dir, 'images.jpg'))
-np.savetxt(os.path.join(log_dir, 'metadata.tsv'), np.where(y_test)[1], fmt='%d')
-"""
